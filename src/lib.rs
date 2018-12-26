@@ -1,27 +1,20 @@
 
-#[test]
-fn test_function_name() {
+
+pub struct Ruquests {
+    pub url: String,
+}
+
+impl Ruquests {
+    pub fn new() -> Ruquests {
+        Ruquests{url: String::new()}
+    }
     
 }
 
-#[cfg(test)]
-mod tests {
-    #[test]
-    fn it_works() {
-        assert_eq!(2 + 2, 4);
-        let mut g = Vec::new();
 
-        for _i in 0 .. 10 {
-            g.push("Hello".to_string());
-            let c = g.capacity();
-            println!("{:?}", c);
-        }
-
-        println!("{:?}", g);
-
-        let value = u16::pow(2, 8);
-        println!("{:?}", value);
-
-
-    }
+#[test]
+fn test_ruquests() {
+    let mut ru = Ruquests::new();
+    ru.url = "www.google.com".to_string();
+    assert_eq!("www.google.com", ru.url);
 }
